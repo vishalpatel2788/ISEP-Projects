@@ -35,7 +35,8 @@
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/packager.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/sa-jdi.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_251/lib/tools.jar"/>
-	<classpathentry kind="lib" path="C:/Users/vishal/Downloads/mysql-connector.jar"/>
+	<classpathentry kind="lib" path="E:/Coding/Java/Java EE workspace/mysql-connector-java-5.1.49.jar"/>
+	<classpathentry kind="lib" path="E:/Coding/Java/ojdbc-full/OJDBC-Full/ojdbc6.jar"/>
 	<classpathentry kind="src" path="target/generated-sources/annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>
