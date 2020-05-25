@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.coronavirustracker.models.CountryDTO;
 import com.example.coronavirustracker.models.Global;
 import com.example.coronavirustracker.models.Message;
+import com.example.coronavirustracker.models.StateDTO;
 import com.example.coronavirustracker.services.APIGlobalData;
+import com.example.coronavirustracker.services.IndiaAPIData;
 import com.example.coronavirustracker.services.MessageService;
 
 
@@ -63,9 +65,11 @@ public class HomeController {
     } 
     
     @GetMapping("/indiacoronalive")
-    public String indiacoronalive(){
+    public String indiacoronalive(Model model){
+    	StateDTO sDTO = IndiaAPIData.getStateData();
+    	model.addAttribute("statewise", sDTO.getstatewise());
    	 return "indiacoronalive" ;
-    }     
+    }        
     
     @GetMapping("/contact")
     public String contact(Model model){
