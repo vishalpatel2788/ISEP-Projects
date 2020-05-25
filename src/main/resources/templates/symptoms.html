@@ -40,7 +40,7 @@
       <li class="nav-item">
         <a class="nav-link" href="prevention">Prevention</a>
       </li>
-       <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="countries">Covid-19 Country Statistics</a>
       </li>
        <li class="nav-item">
@@ -55,64 +55,60 @@
   </div>
 </nav>
 
-<div class="main_header">
-	<div class="row w-100 h-100" >
-		 <div class="col-lg-5 col-md-5 col-12 order-lg-1 order-2">
-		 	<div class="leftside w-100 h-100 d-flex justify-content-center align-items-center">
-		 		<img src="/images/eksath.png" width="300" height="300">
-		 	</div>
-		 </div>
+<!-- /////////////// Coronavirus symptoms ////////////// -->
 
-		 <div class="col-lg-7 col-md-7 col-12 order-lg-2 order-1">
-		 	<div class="rightside w-100 h-100 d-flex justify-content-center align-items-center">
-		 		<h1>Let's Stay Safe & Fight Together Against Cor<span class="corona_rot"> <img src="images/corona.png"> 
-		 		</span>na Virus</h1>
-		 	</div>
-		 </div>
+<div class="container-fluid  pt-5 pb-5 " id="aboutid">
+	<div class="section_header text-center mb-5 mt-4">
+		<h1> Coronavirus symptoms</h1>
 	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-12 mt-5">
+				<figure class="text-center">
+				<img src="images/cough.png" class="img-fluid " width="120" height="120" >
+				<figcaption> cough</figcaption>
+				</figure>
+			</div>
+
+			<div class= "col-lg-4 col-md-4 col-12 mt-5 " > 
+				<figure  class="text-center">
+					<img src="images/runnynose.png" class="img-fluid" width="120" height="120">
+					<figcaption > runny nose </figcaption>
+				</figure>
+			</div>
+
+			<div class= "col-lg-4 col-md-4 col-12 mt-5 " > 
+				<figure  class="text-center">
+					<img src="images/fever.png" class="img-fluid" width="120" height="120">
+					<figcaption > fever </figcaption>
+				</figure>
+			</div>
+
+			<div class= "col-lg-4 col-md-4 col-12 mt-5 " > 
+				<figure  class="text-center">
+					<img src="images/sick.png" class="img-fluid" width="120" height="120">
+					<figcaption > cold </figcaption>
+				</figure>
+			</div>
+
+			<div class= "col-lg-4 col-md-4 col-12 mt-5 " > 
+				<figure  class="text-center" >
+					<img src="images/week.png" class="img-fluid" width="120" height="120">
+					<figcaption > tiredness </figcaption>
+				</figure>
+			</div>
+
+			<div class= "col-lg-4 col-md-4 col-12 mt-5 " > 
+				<figure  class="text-center">
+					<img src="images/breath.png" class="img-fluid" width="120" height="120">
+					<figcaption > difficulty breathing (severe cases) </figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+
 </div>
-
-
-<!-- **************** corona latest updates ************** -->
-
-<section class="corona_update">
-	<div class="mb-3">
-		<h3 class="text-uppercase text-center">Covid-19 updates</h3>
-	</div>
-
-	<div class="d-flex justify-content-around align-items-center count_style" >
-		<div>
-			<h1 class="count" id="TotalConfirmed" th:text="${TotalConfirmed}"></h1>
-			<p>Total Confirmed</p>
-		</div>
-		<div >
-			<h1 class="count"  id="NewConfirmed" th:text="${NewConfirmed}">  </h1>
-			<p>New Confirmed</p>
-		</div>
-
-		<div>
-			<h1 class="count" id="TotalRecovered" th:text="${TotalRecovered}"></h1>
-			<p>Total Recovered</p>
-		</div>
-		<div>
-			<h1 class="count" id="NewRecovered" th:text="${NewRecovered}"></h1>
-			<p>New Recovered</p>
-		</div>
-		
-		<div>
-			<h1 class="count" id="TotalDeaths" th:text="${TotalDeaths}"></h1>
-			<p>Total Deaths</p>
-		</div>
-		<div>
-			<h1 class="count" id="NewDeaths" th:text="${NewDeaths}"></h1>
-			<p>New Deaths</p>
-		</div>
-
-		
-	</div>
-
-</section>
-
 
 
 <!-- ///////////// top cursor /////////// -->
@@ -124,6 +120,7 @@
 
 <!-- /////////////////// footer ////////////// -->
 
+
 <footer class="mt-5" style="position: fixed; bottom: 0; left: 0; width:100%; height:50px;">
   <div class=" footer_style bg-dark text-white container-fluid text-center" style= "padding: 15px;">
     <p>Copyrights by Team Nakama &copy;2020	</p>
@@ -132,23 +129,6 @@
 
 
 <script type="text/javascript">
-
-$('.count').counterUp({
-	delay:10,
-	time:3000
-})
-
-	
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-document.body.scrollTop = 0; // For Safari
-document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
-
-
-
 
 </script>
 

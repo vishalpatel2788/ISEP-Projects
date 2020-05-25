@@ -10,8 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="css/paginate.css">
-<script src="js/paginate.js"></script>
-    <link rel="stylesheet" href="css/ligne.css">
+  <script src="js/paginate.js"></script>
+  <link rel="stylesheet" href="css/ligne.css">
 </head>
 <body onload="fetch()">
 
@@ -25,25 +25,26 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto pr-5 text-capitalize">
-      <li class="nav-item active">
-        <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="index">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index">about</a>
+        <a class="nav-link" href="about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index">symptoms</a>
+        <a class="nav-link" href="symptoms">Symptoms</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index">prevention</a>
+        <a class="nav-link" href="prevention">Prevention</a>
       </li>
-
        <li class="nav-item">
-        <a class="nav-link" href="indiacoronalive">Corona Cases Live (India)</a>
+        <a class="nav-link" href="countries">Covid-19 Country Statistics</a>
       </li>
-
+       <li class="nav-item active">
+        <a class="nav-link" href="indiacoronalive">Corona Cases Live (India) <span class="sr-only">(current)</span></a>
+      </li>
        <li class="nav-item">
-        <a class="nav-link" href="index">contact</a>
+        <a class="nav-link" href="contact">Contact</a>
       </li>
 
     </ul>
@@ -67,14 +68,14 @@
     
     <table class="myTable table hover" id="tbl">
 			<tr>
-				<td style="font-weight:bold">Lastupdatedtime</td>
+				<td style="font-weight:bold">Last Updated</td>
 				<td style="font-weight:bold">State</td>
 				<td style="font-weight:bold">Confirmed</td>
 				<td style="font-weight:bold">Active</td>
 				<td style="font-weight:bold">Recovered</td>
 				<td style="font-weight:bold">Deaths</td>
 			</tr>
-		</table>
+	</table>
     
   </div>
 
@@ -88,9 +89,9 @@
 
 <!-- *********************************** footer part ****************** -->
 
-<footer class="mt-5">
-  <div class=" footer_style bg-dark text-white container-fluid text-center">
-    <p>Copyrights by Team Nakama 2020 </p>
+<footer class="mt-5" style="position: fixed; bottom: 0; left: 0; width:100%; height:50px;">
+  <div class=" footer_style bg-dark text-white container-fluid text-center" style= "padding: 15px;">
+    <p>Copyrights by Team Nakama &copy;2020	</p>
   </div>
 </footer>
 
