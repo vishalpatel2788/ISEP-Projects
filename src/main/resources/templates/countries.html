@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="css/paginate.css">
+<script src="js/paginate.js"></script>
+    <link rel="stylesheet" href="css/ligne.css">
+
+</head>
+<body >
+
+<nav class="navbar navbar-expand-lg nav_style p-3">
+<div class="logo">
+  <a  href="#"><img src ="images/nakama.jpg"> </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav ml-auto pr-5 text-capitalize">
+      <li class="nav-item ">
+        <a class="nav-link" href="index">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="symptoms">Symptoms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="prevention">Prevention</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="countries">Covid-19 Country Statistics <span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="indiacoronalive">Corona Cases Live (India)</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+<div class="container">
+    <div class="panel">
+        <div class="body">
+            <div class="input-group">
+                <label for="searchBox"></label>
+                <input type="search" id="searchBox" placeholder="Search">
+            </div>
+        </div>
+    </div>
+    <table class="myTable table hover">
+        
+        <tr>
+            <th>Country</th>
+            <th>NewConfirmed</th>
+            <th>TotalConfirmed</th>
+            <th>NewRecovered</th>
+            <th>TotalRecovered</th>
+            <th>NewDeaths</th>
+            <th>TotalDeaths</th>
+            
+        </tr>
+        
+        <tr th:each="country : ${countries}">
+            <td th:text="${country.Country}"></td>
+            <td th:text="${country.NewConfirmed}"></td>
+            <td th:text="${country.TotalConfirmed}"></td>
+            <td th:text="${country.NewRecovered}"></td>
+            <td th:text="${country.TotalRecovered}"></td>
+            <td th:text="${country.NewDeaths}"></td>
+            <td th:text="${country.TotalDeaths}"></td>
+            
+        </tr>
+    </table>
+
+</div>
+
+
+<!-- /////////////////// Buttom to move up ////////////// -->
+
+<div class="container scrolltop float-right pr-5">
+  <i class="fa fa-arrow-up" onclick="topFunction()" id="myBtn"> </i>
+</div>
+
+    
+<!-- /////////////////// footer ////////////// -->
+
+<footer class="mt-5" style="position: fixed; bottom: 0; left: 0; width:100%; height:50px;">
+  <div class=" footer_style bg-dark text-white container-fluid text-center" style= "padding: 15px;">
+    <p>Copyrights by Team Nakama &copy;2020	</p>
+  </div>
+</footer>
+
+<script>
+
+
+// ************ top arrow script ***************
+
+mybutton = document.getElementById("myBtn");
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+document.body.scrollTop = 0; // For Safari
+document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+   
+let options = {
+        numberPerPage:10, 
+        goBar:true, 
+        pageCounter:true, 
+    };
+
+    let filterOptions = {
+        el:'#searchBox'
+    };
+
+    paginate.init('.myTable',options,filterOptions);
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="css/paginate.css">
+<script src="js/paginate.js"></script>
+    <link rel="stylesheet" href="css/ligne.css">
+
+</head>
+<body >
+
+<nav class="navbar navbar-expand-lg nav_style p-3">
+<div class="logo">
+  <a  href="#"><img src ="images/nakama.jpg"> </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav ml-auto pr-5 text-capitalize">
+      <li class="nav-item ">
+        <a class="nav-link" href="index">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="symptoms">Symptoms</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="prevention">Prevention</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link" href="countries">Covid-19 Country Statistics <span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="indiacoronalive">Corona Cases Live (India)</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+<div class="container">  
+  <div class="row">
+    <div class="col-sm-6" style="background-color:#007bff80;">     
+     <h1 class="display-4" th:text="${totalCases}"></h1>
+    <p class="lead">Total cases reported as of today</p>
+    </div>
+    <div class="col-sm-6" style="background-color:#ffc107;">   
+     <h1 class="display-4" th:text="${date}"></h1>
+    <p class="lead"><b>Reported Date</b></p>      
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="panel">
+        <div class="body">
+            <div class="input-group">
+                <label for="searchBox"></label>
+                <input type="search" id="searchBox" placeholder="Search">
+            </div>
+        </div>
+    </div>
+  <table class="myTable table hover">
+        
+        <thread>
+        <tr>
+            <th>Country</th>
+            <th>Province</th>
+            <th>Total cases reported</th>
+        </tr>
+        </thread>
+        <tr th:each="location : ${locations}">
+            <td th:text="${location.country}"></td>
+            <td th:text="${location.province}"></td>
+            <td th:text="${location.latest}">0</td>
+        </tr>
+    </table>
+
+</div>
+
+
+
+
+    
+<!-- /////////////////// footer ////////////// -->
+
+<footer class="mt-5" style="position: fixed; bottom: 0; left: 0; width:100%; height:50px;">
+  <div class=" footer_style bg-dark text-white container-fluid text-center" style= "padding: 15px;">
+    <p>Copyrights by Team Nakama &copy;2020	</p>
+  </div>
+</footer>
+
+</body>
+
+</html>
