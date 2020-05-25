@@ -44,7 +44,6 @@ INSERT INTO `details` (`name`, `mobile`, `email`, `message`) VALUES
 ('John Snow', '987654321', 'john@email.com', 'This is an insertion test'),
 ('Ani', '98765432', 'ani@email.com', 'TESTING'),
 ('Aniruddha ', '764061654', 'anir@email.com', 'asdfasdfsdf'),
-('Aniruddha ', '764061654', 'anir@email.com', 'asdfasdfsdf'),
 ('Rakesh', '84654165', 'rakesh@email.com', 'Another test'),
 ('Rakesh Nuvvula', '84654165', 'rakesh@email.com', 'Another test 123');
 COMMIT;
