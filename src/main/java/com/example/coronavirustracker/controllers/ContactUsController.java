@@ -2,8 +2,6 @@ package com.example.coronavirustracker.controllers;
 
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
