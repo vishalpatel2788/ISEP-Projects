@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html>
+
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title></title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/paginate.css">
-  <script src="js/paginate.js"></script>
-  <link rel="stylesheet" href="css/ligne.css">
+  
+<link rel="stylesheet" href="css/paginate.css">
+<script src="js/paginate.js"></script>
+    <link rel="stylesheet" href="css/ligne.css">
+
 </head>
-<body onload="fetch()">
+<body >
 
 <nav class="navbar navbar-expand-lg nav_style p-3">
-  <div class="logo">
+<div class="logo">
   <a  href="#"><img src ="images/nakama.jpg"> </a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,9 +24,9 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto pr-5 text-capitalize">
-      <li class="nav-item">
-        <a class="nav-link" href="index">Home</a>
+     <ul class="navbar-nav ml-auto pr-5 text-capitalize">
+      <li class="nav-item ">
+        <a class="nav-link" href="index">Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="about">About</a>
@@ -37,11 +37,11 @@
       <li class="nav-item">
         <a class="nav-link" href="prevention">Prevention</a>
       </li>
-       <li class="nav-item">
-        <a class="nav-link" href="countries">Covid-19 Country Statistics</a>
-      </li>
        <li class="nav-item active">
-        <a class="nav-link" href="indiacoronalive">Corona Cases Live (India) <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="countries">Covid-19 Country Statistics <span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="indiacoronalive">Corona Cases Live (India)</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="contact">Contact</a>
@@ -52,12 +52,10 @@
   </div>
 </nav>
 
-<!-- **************************** -->
+
+
 <div class="container">
-<section class="corona_update container-fluid">
- 
-  <div class="table-responsive">
-   <div class="panel">
+    <div class="panel">
         <div class="body">
             <div class="input-group">
                 <label for="searchBox"></label>
@@ -65,36 +63,38 @@
             </div>
         </div>
     </div>
-    
-    <table class="myTable table hover" id="tbl">
-			<tr>
-				<td style="font-weight:bold">Last Updated</td>
-				<td style="font-weight:bold">State</td>
-				<td style="font-weight:bold">Confirmed</td>
-				<td style="font-weight:bold">Active</td>
-				<td style="font-weight:bold">Recovered</td>
-				<td style="font-weight:bold">Deaths</td>
-			</tr>
-	</table>
-    
-  </div>
+    <table class="myTable table hover">
+        
+        <tr>
+            <th>State Name</th>
+            <th>Active</th>
+            <th>Total Confirmed</th>
+            <th>Total Recovered</th>
+            <th>Total Deaths</th>
+            <th>Last updated time</th>
+            
+        </tr>
+        
+        <tr th:each="state : ${statewise}">
+            <td th:text=${state.state}></td>
+            <td th:text=${state.active}></td>
+            <td th:text=${state.confirmed}></td>
+            <td th:text=${state.recovered}></td>
+            <td th:text=${state.deaths}></td>
+            <td th:text=${state.lastupdatedtime}></td>
+            
+        </tr>
+    </table>
 
-  </div>
-
-<!-- ///////////// top cursor /////////// -->
-
-<div class="container scrolltop float-right pr-5">
-  <i class="fa fa-arrow-up" onclick="topFunction()" id="myBtn"> </i>
 </div>
-
-<!-- *********************************** footer part ****************** -->
+    
+<!-- /////////////////// footer ////////////// -->
 
 <footer class="mt-5" style="position: fixed; bottom: 0; left: 0; width:100%; height:50px;">
   <div class=" footer_style bg-dark text-white container-fluid text-center" style= "padding: 15px;">
     <p>Copyrights by Team Nakama &copy;2020	</p>
   </div>
 </footer>
-
 
 <script>
 
@@ -117,37 +117,9 @@ document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-function fetch() {
-    $.get("https://api.covid19india.org/data.json",
-        function (data) {
-            console.log(data['statewise'].length)  //total countries
-            var tbl = document.getElementById('tbl');
-            for(var i=1;i<(data['statewise'].length);i++)
-            {
-                var x = tbl.insertRow(i);
-                x.insertCell(0);
-                tbl.rows[i].cells[0].innerHTML = data['statewise'][i-1]['lastupdatedtime'];
-
-                x.insertCell(1);
-                tbl.rows[i].cells[1].innerHTML = data['statewise'][i-1]['state'];
-
-                x.insertCell(2);
-                tbl.rows[i].cells[2].innerHTML = data['statewise'][i-1]['confirmed'];
-
-                x.insertCell(3);
-                tbl.rows[i].cells[3].innerHTML = data['statewise'][i-1]['active'];
- 
-                x.insertCell(4);
-                tbl.rows[i].cells[4].innerHTML = data['statewise'][i-1]['recovered'];
-
-                x.insertCell(5);
-                tbl.rows[i].cells[5].innerHTML = data['statewise'][i-1]['deaths'];
-
-            }
-        });
-}
+   
 let options = {
-        numberPerPage:5, 
+        numberPerPage:10, 
         goBar:true, 
         pageCounter:true, 
     };
@@ -160,5 +132,8 @@ let options = {
 
 
 </script>
+
+
 </body>
+
 </html>

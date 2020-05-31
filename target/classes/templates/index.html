@@ -9,14 +9,22 @@
   <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="js/IndiaChart.js"></script>
+  <script src="js/WorldChart.js"></script>
      <link rel="stylesheet" href="css/ligne.css">
+     
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+     
   
 </head>
-<body onload="fetch()">
+
 
 <nav class="navbar navbar-expand-lg nav_style p-3">
   <div class="logo">
@@ -79,41 +87,53 @@
 	<div class="mb-3">
 		<h3 class="text-uppercase text-center">Covid-19 updates</h3>
 	</div>
+<div class="container">  
+  <div class="row">
+    <div class="col-sm-4" style="background-color:#007bff80;">     
+     <h1 class="display-4" th:text="${TotalConfirmed}"></h1>
+    <p class="lead" align="center">Total Confirmed</p>
+    </div>
+    <div class="col-sm-4" style="background-color:#bd213026;">   
+     <h1 class="display-4" th:text="${NewConfirmed}"></h1>
+    <p class="lead" align="center"><b>New Confirmed</b></p>      
+    </div>
+    <div class="col-sm-4" style="background-color:#1e7e34;">   
+     <h1 class="display-4" th:text="${TotalRecovered}"></h1>
+    <p class="lead" align="center"><b>Total Recovered</b></p>      
+    </div>
+</div>
+</div>
+<div></div>
+ <div class="container">  
+ <div class="row">
+    <div class="col-sm-4" style="background-color:#ffc107;">   
+     <h1 class="display-4" th:text="${NewRecovered}"></h1>
+    <p class="lead" align="center"><b>New Recovered</b></p>      
+    </div>
+    <div class="col-sm-4" style="background-color:#dc3545;">   
+     <h1 class="display-4" th:text="${TotalDeaths}"></h1>
+    <p class="lead" align="center"><b>Total Deaths</b></p>      
+    </div>
+    <div class="col-sm-4" style="background-color:#6c757d;">   
+     <h1 class="display-4" th:text="${NewDeaths}"></h1>
+    <p class="lead" align="center"><b>New Deaths</b></p>      
+    </div>
+  </div>
+</div>
+	
 
-	<div class="d-flex justify-content-around align-items-center count_style" >
-		<div>
-			<h1 class="count" id="TotalConfirmed" th:text="${TotalConfirmed}"></h1>
-			<p>Total Confirmed</p>
-		</div>
-		<div >
-			<h1 class="count"  id="NewConfirmed" th:text="${NewConfirmed}">  </h1>
-			<p>New Confirmed</p>
-		</div>
-
-		<div>
-			<h1 class="count" id="TotalRecovered" th:text="${TotalRecovered}"></h1>
-			<p>Total Recovered</p>
-		</div>
-		<div>
-			<h1 class="count" id="NewRecovered" th:text="${NewRecovered}"></h1>
-			<p>New Recovered</p>
-		</div>
-		
-		<div>
-			<h1 class="count" id="TotalDeaths" th:text="${TotalDeaths}"></h1>
-			<p>Total Deaths</p>
-		</div>
-		<div>
-			<h1 class="count" id="NewDeaths" th:text="${NewDeaths}"></h1>
-			<p>New Deaths</p>
-		</div>
-
-		
+	
+<div class="mb-3">
+		<h3 class="text-uppercase text-center">World Corona Cases</h3>
+		<canvas id="myWorldChart"></canvas>
+	</div>
+	
+	<div class="mb-3">
+		<h3 class="text-uppercase text-center">India Corona Cases</h3>
+		<canvas id="myChart"></canvas>
 	</div>
 
 </section>
-
-
 
 <!-- ///////////// top cursor /////////// -->
 
@@ -145,9 +165,6 @@ function topFunction() {
 document.body.scrollTop = 0; // For Safari
 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-
-
-
 
 
 </script>
