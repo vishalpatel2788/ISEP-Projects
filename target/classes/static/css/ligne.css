@@ -1810,9 +1810,8 @@ a.undecoration {
         -ms-flex-order: 1;
         order: 1;
     }
-    /*
+    
   <!------------------------index page css--------------------->
-  */
   html{
 	scroll-behavior: smooth;
 }
@@ -1882,7 +1881,7 @@ a.undecoration {
 /************** corona update *************/
 
 .corona_update{
-	margin: 0 0 60px 0;
+	margin: 0 0 30px 0;
 }
 
 .corona_update h3{ color: #ff7675; }
@@ -1909,9 +1908,9 @@ a.undecoration {
 
 /***************** top scroll **************/
 #myBtn {
-  display: none; /* Hidden by default */
+  /*display: none;  Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 30px; /* Place the button at the bottom of the page */
+  bottom: 65px; /* Place the button at the bottom of the page */
   right: 40px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
@@ -1919,7 +1918,7 @@ a.undecoration {
   background-color: #00A8FF; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 10px; /* Some padding */
+  padding: 12px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
 }
 

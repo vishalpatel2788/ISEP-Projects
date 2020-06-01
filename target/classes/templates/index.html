@@ -16,7 +16,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="js/IndiaChart.js"></script>
   <script src="js/WorldChart.js"></script>
-     <link rel="stylesheet" href="css/ligne.css">
+  <link rel="stylesheet" href="css/ligne.css">
+  <link rel="stylesheet" href="css/styles.css">
      
 
     <!-- Chart.js -->
@@ -84,52 +85,50 @@
 <!-- **************** corona latest updates ************** -->
 
 <section class="corona_update">
-	<div class="mb-3" style="margin: 25px 0;">
-		<h3 class="text-uppercase text-center">Covid-19 Statistics</h3>
+	<div class="mb-3">
+		<h3 class="text-uppercase text-center">Covid-19 updates</h3>
 	</div>
-<div class="container">  
-  <div class="row">
-    <div class="col-sm-4" style="background-color:#007bff80;">     
-     <h1 class="display-4" th:text="${TotalConfirmed}"></h1>
-    <p class="lead" align="center">Total Confirmed</p>
-    </div>
-    <div class="col-sm-4" style="background-color:#bd213026;">   
-     <h1 class="display-4" th:text="${NewConfirmed}"></h1>
-    <p class="lead" align="center"><b>New Confirmed</b></p>      
-    </div>
-    <div class="col-sm-4" style="background-color:#1e7e34;">   
-     <h1 class="display-4" th:text="${TotalRecovered}"></h1>
-    <p class="lead" align="center"><b>Total Recovered</b></p>      
-    </div>
-</div>
-</div>
-<div></div>
- <div class="container">  
- <div class="row">
-    <div class="col-sm-4" style="background-color:#ffc107;">   
-     <h1 class="display-4" th:text="${NewRecovered}"></h1>
-    <p class="lead" align="center"><b>New Recovered</b></p>      
-    </div>
-    <div class="col-sm-4" style="background-color:#dc3545;">   
-     <h1 class="display-4" th:text="${TotalDeaths}"></h1>
-    <p class="lead" align="center"><b>Total Deaths</b></p>      
-    </div>
-    <div class="col-sm-4" style="background-color:#6c757d;">   
-     <h1 class="display-4" th:text="${NewDeaths}"></h1>
-    <p class="lead" align="center"><b>New Deaths</b></p>      
-    </div>
-  </div>
-</div>
 	
-
+	<div class="container" style="margin:40px auto;">
+		<div class="row">
+			<div class="col-sm-2 counter">
+				<h1 class="count" id="TotalConfirmed" th:text="${TotalConfirmed}"></h1>
+				<p>Total Confirmed</p>
+			</div>
+			<div class="col-sm-2 counter">
+				<h1 class="count"  id="NewConfirmed" th:text="${NewConfirmed}">  </h1>
+				<p>New Confirmed</p>
+			</div>
 	
-<div class="mb-3" style="margin: 25px 0;">
-		<h3 class="text-uppercase text-center">Worldwide Covid-19 Cases</h3>
+			<div class="col-sm-2 counter">
+				<h1 class="count" id="TotalRecovered" th:text="${TotalRecovered}"></h1>
+				<p>Total Recovered</p>
+			</div>
+			<div class="col-sm-2 counter">
+				<h1 class="count" id="NewRecovered" th:text="${NewRecovered}"></h1>
+				<p>New Recovered</p>
+			</div>
+			
+			<div class="col-sm-2 counter">
+				<h1 class="count" id="TotalDeaths" th:text="${TotalDeaths}"></h1>
+				<p>Total Deaths</p>
+			</div>
+			<div class="col-sm-2 counter">
+				<h1 class="count" id="NewDeaths" th:text="${NewDeaths}"></h1>
+				<p>New Deaths</p>
+			</div>
+		</div>
+	
+	</div>
+	
+	
+<div class="mb-25">
+		<h3 class="text-uppercase text-center">World Corona Cases</h3>
 		<canvas id="myWorldChart"></canvas>
 	</div>
 	
-	<div class="mb-3" style="margin: 25px 0;">
-		<h3 class="text-uppercase text-center">India Covid-19 Cases</h3>
+	<div class="mb-25">
+		<h3 class="text-uppercase text-center mb-15">India Corona Cases</h3>
 		<canvas id="myChart"></canvas>
 	</div>
 
@@ -144,7 +143,7 @@
 
 <!-- /////////////////// footer ////////////// -->
 
-<footer class="mt-25" style="position: fixed; bottom: 0; left: 0; width:100%; height:50px; margin-top: 20px;">
+<footer class="mt-5" style="position: fixed; bottom: 0; left: 0; width:100%; height:50px;">
   <div class=" footer_style bg-dark text-white container-fluid text-center" style= "padding: 15px;">
     <p>Copyrights by Team Nakama &copy;2020	</p>
   </div>
@@ -155,15 +154,15 @@
 
 $('.count').counterUp({
 	delay:10,
-	time:3000
+	time:4000
 })
 
 	
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-document.body.scrollTop = 0; // For Safari
-document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	document.body.scrollTop = 0; // For Safari
+	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 

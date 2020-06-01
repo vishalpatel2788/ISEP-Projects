@@ -30,6 +30,7 @@ public class MessageService {
 				ps.setString(3,msg.getEmail());
 				ps.setString(4,msg.getMessage());
 				int check = ps.executeUpdate();
+				
 				if(check == 1) {
 					System.out.println("Insertion successful!\n");
 					flag = true;
