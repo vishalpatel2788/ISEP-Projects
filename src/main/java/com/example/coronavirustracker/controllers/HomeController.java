@@ -84,7 +84,6 @@ public class HomeController {
     		System.out.println("\n\n\nSuccessful");
     	}
     	
-    	
         return "contact";
     }
    
