@@ -22,5 +22,7 @@ Installation Steps:
 1. Download project source code
 2. Unzip file and import into your IDE as a 'Maven Project'
 3. Run MySQL server on XAMPP and create a database called 'coronadb'
-4. Import the table provided in the zip folder 'coronadb.sql'
+4. Import the table provided in the zip folder called 'coronadb.sql'
 5. Run the project as a Java Application in your IDE
+
+The Web Application is running and can be viewed on http://localhost:8080/
