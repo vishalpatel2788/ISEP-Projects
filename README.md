@@ -11,6 +11,9 @@ Worldwide statistics (e.g. Total Number of Confirmed Cases) are shown on the Hom
 Further statistics are shown with respect to each country.
 An in-depth overview situation in India can be seen as the statistics for the country is given Statewise.
 
+APIs used:
+- https://covid19api.com/
+- https://api.covid19india.org/
 
 Requirements to run:
 1. Eclipse EE or Intellij
