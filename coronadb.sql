@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2020 at 02:32 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Jun 01, 2020 at 05:21 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,18 +34,6 @@ CREATE TABLE `details` (
   `email` varchar(50) NOT NULL,
   `message` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `details`
---
-
-INSERT INTO `details` (`name`, `mobile`, `email`, `message`) VALUES
-('Ani', '9876543210', 'ani@email.com', 'This is a test.'),
-('John Snow', '987654321', 'john@email.com', 'This is an insertion test'),
-('Ani', '98765432', 'ani@email.com', 'TESTING'),
-('Aniruddha ', '764061654', 'anir@email.com', 'asdfasdfsdf'),
-('Rakesh', '84654165', 'rakesh@email.com', 'Another test'),
-('Rakesh Nuvvula', '84654165', 'rakesh@email.com', 'Another test 123');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
